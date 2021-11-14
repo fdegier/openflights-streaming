@@ -6,12 +6,12 @@ build:
 	docker build . -t $(IMAGE_NAME) --build-arg requirements=requirements.dev.txt
 
 debug-container:
-	docker run -it -v $(pwd)/data:/app/data --entrypoint /bin/bash $(IMAGE_NAME)
+	docker run -it -v $(shell pwd)/data:/app/data --entrypoint /bin/bash $(IMAGE_NAME)
 
 get-data:
 	curl -o $(BATCH_FILE) $(ROUTES_URL)
 
-fake-stream:
+generate-stream:
 	bash generate-stream-data.sh
 
 top-10-source-airport-batch: build

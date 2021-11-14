@@ -94,6 +94,15 @@ make top-10-source-airport-stream-window
 Above will start the streaming application, and it will await new data, using the second terminal and a bash script we
 will create new data every 10 seconds. The output is stored in `data/top_10_window.parquet`
 
+In a second terminal run the command to generate streaming data:
+
+```bash
+# terminal 2
+make generate-stream
+```
+
+You will now see the streaming application update the aggregation whenever a new file comes in.
+
 Example:
 
 ```
