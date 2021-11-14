@@ -1,5 +1,7 @@
 FROM python:3.9.6
 
+ARG requirements=requirements.txt
+
 # hadolint ignore=DL3008
 RUN apt-get update && \
     apt-get install -y --no-install-recommends openjdk-11-jre-headless && \
@@ -9,7 +11,9 @@ RUN apt-get update && \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.dev.txt .
+
+RUN pip install --no-cache-dir -r $requirements
 
 COPY app app
 
