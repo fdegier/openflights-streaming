@@ -1,4 +1,4 @@
-BATCH_FILE = data/stream/routes.dat
+BATCH_FILE = data/batch/routes.dat
 ROUTES_URL = https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat
 IMAGE_NAME = openflights-spark
 
